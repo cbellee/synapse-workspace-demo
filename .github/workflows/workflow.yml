@@ -26,7 +26,8 @@ jobs:
           client-id: ${{ secrets.client-id }}
           tenant-id: ${{ secrets.tenant-id }}
           subscription-id: ${{ secrets.subscription-id }}
-      - uses: azure/cli
+      - name: 'Deploy Synapse Workspace'
+        uses: azure/cli
         with:
           azcliversion: 2.30.0
           inlineScript: |
