@@ -36,8 +36,8 @@ jobs:
             az deployment group create \
               --name 'infra-deployment' \
               --resource-group ${{ env.resourceGroupName }} \
-              --template-file ./main.bicep \
-              --parameters ./main.bicepparam \
+              --template-file ./infra/main.bicep \
+              --parameters ./infra/main.bicepparam \
               --parameters location=${{ env.location }} \
               --parameters administratorPassword=${{ secrets.ADMIN_PASSWORD }} \
               --parameters synapseSqlAdminGroupObjectID=${{ secrets.ADMIN_GROUP_ID }}
