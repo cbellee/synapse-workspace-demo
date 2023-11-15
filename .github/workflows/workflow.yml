@@ -37,8 +37,6 @@ jobs:
               --resource-group ${{ env.resourceGroupName }} \
               --parameters ./main.bicepparam \
               --parameters location=${{ env.location }} \
-              --parameters administratorPasswordOrKey=${{ secrets.ADMIN_PASSWORD }} \
+              --parameters administratorPassword=${{ secrets.ADMIN_PASSWORD }} \
               --parameters synapseSqlAdminGroupObjectID=${{ secrets.ADMIN_GROUP_ID }}
-
-            
      
