@@ -32,9 +32,11 @@ jobs:
           azcliversion: 2.30.0
           inlineScript: |
             az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
             az deployment group create \
               --name 'infra-deployment' \
               --resource-group ${{ env.resourceGroupName }} \
+              --template-file ./main.bicep \
               --parameters ./main.bicepparam \
               --parameters location=${{ env.location }} \
               --parameters administratorPassword=${{ secrets.ADMIN_PASSWORD }} \
